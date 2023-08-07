@@ -23,8 +23,7 @@ model_en = tf.keras.models.load_model(MODEL_EN_PATH)
 
 # Make Spanish sentiment prediction
 def make_es_prediction(text):
-    predictions = model_es.predict(np.array([tokenizer_es.encode(text)]))
-    return np.argmax(predictions[0])
+    return model_es.predict(np.array([tokenizer_es.encode(text)]))
 
 # Make English sentiment prediction
 def make_en_prediction(text):
